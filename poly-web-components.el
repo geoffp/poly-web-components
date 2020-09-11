@@ -69,5 +69,3 @@
   :innermodes '(
                 poly-web-components-css-innermode
                 poly-web-components-html-innermode))
-
-
