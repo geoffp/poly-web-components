@@ -26,8 +26,16 @@
   :mode 'css-mode
   :head-matcher "\\(styled.\\w+\\|css\\|keyframes\\)\\(<\\(.\\|\n\\)*?>\\)?`"
   :tail-matcher "`;"
+  :allow-nested nil
   :head-mode 'host
   :tail-mode 'host)
+
+(define-innermode poly-web-components-ts-innermode
+  :mode 'typescript-mode
+  :can-overlap t
+  :allow-nested nil
+  :head-matcher "\\${"
+  :tail-matcher "};")
 
 ;; (define-innermode poly-web-components-js-in-template-innermode
 ;;   :mode 'typescript-mode
@@ -58,7 +66,8 @@
 
 (define-polymode poly-ts-web-components-mode
   :hostmode 'poly-ts-web-components-hostmode
-  :innermodes '(poly-web-components-css-innermode
+  :innermodes '(
+                poly-web-components-css-innermode
                 poly-web-components-html-innermode))
 
 
