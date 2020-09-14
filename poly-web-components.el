@@ -25,10 +25,11 @@
 (define-innermode poly-web-components-css-innermode
   :mode 'css-mode
   :head-matcher "\\(styled.\\w+\\|css\\|keyframes\\)\\(<\\(.\\|\n\\)*?>\\)?`"
-  :tail-matcher "`;"
+  :tail-matcher "`[;,\n]"
   :allow-nested nil
   :head-mode 'host
-  :tail-mode 'host)
+  :tail-mode 'host
+  :body-indent-offset 2)
 
 (define-innermode poly-web-components-ts-innermode
   :mode 'typescript-mode
